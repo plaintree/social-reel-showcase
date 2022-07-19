@@ -20,6 +20,11 @@ const Upload = () => {
   const [savingPost, setSavingPost] = useState(false);
   const { userProfile }: { userProfile: any } = useAuthStore();
   const router = useRouter();
+  
+  useEffect(() => {
+    if (!userProfile) router.push('/');
+  }, [userProfile, router]);
+  
   const uploadVideo = async (e: any) => {
     const selectedFile = e.target.files[0];
     const fileTypes = ["video/mp4", "video/webm", "video/ogg"];
@@ -117,7 +122,7 @@ const Upload = () => {
                       <input
                         type='file'
                         name='upload-video'
-                        onChange={uploadVideo}
+                        onChange={(e) => uploadVideo(e)}
                         className='w-0 h-0'
                       />
                     </label>
