@@ -31,7 +31,7 @@ const Queries: NextPage<IProps> = ({ videos }) => {
 
   return (
     <div className='w-full'>
-      <div className='flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 bg-white w-full'>
+      <div className='flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 bg-lime-50 w-full'>
         <p
           className={`text-xl font-semibold cursor-pointer mt-2 ${accountStyle}`}
           onClick={() => setIsAccount(true)}>
